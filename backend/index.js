@@ -1,12 +1,29 @@
-import express from "express";
+// package imports
+import express from "express"
+import dotenv from "dotenv"
+import cookieParser from "cookie-parser"
 
-const PORT = 3000
+// file imports
+import connectDB from "./config/db.js"
+import authRoutes from "./routes/authRoutes.js"
+import protectedRoutes from "./routes/protectedRoutes.js"
+
+const PORT = process.env.PORT || 5000
+dotenv.config()
+
 const app = express()
 
-app.get("/", () => {
-    console.log("hello")
-})
+// middleware
+app.use(express.json());
+app.use(cookieParser());
 
-app.listen(PORT, () => {
+// api endpoints
+app.use("/api/auth",authRoutes)
+app.use("/api/protected", protectedRoutes);
+
+
+// connect to database and start server
+connectDB();
+app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
