@@ -21,7 +21,6 @@ app.use(cookieParser());
 app.use("/api/auth",authRoutes)
 app.use("/api/protected", protectedRoutes);
 
-
 // connect to database and start server
 connectDB();
 app.listen(process.env.PORT, () => {
