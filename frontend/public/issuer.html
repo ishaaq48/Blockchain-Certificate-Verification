@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="mainstyle.css">
+    <title>Issuer Dashboard</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Issuer Dashboard</h1>
+        <form id="issueForm">
+            <input type="text" id="studentName" placeholder="Student Name" required><br>
+            <input type="text" id="courseName" placeholder="Course Name" required><br>
+            <input type="text" id="issuedYear" placeholder="Issued Year" required><br>
+            <button type="submit">Issue Certificate</button>
+        </form><br>
+        <button id="logoutBtn">Logout</button>
+    </div>
+    
+
+    <script>
+        document.getElementById('issueForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const studentName = document.getElementById('studentName').value;
+            const courseName = document.getElementById('courseName').value;
+            const issuedYear = document.getElementById('issuedYear').value;
+
+            try {
+                const response = await fetch('http://localhost:8000/api/protected/issue-certificate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include',
+                    body: JSON.stringify({ studentName, courseName, issuedYear })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    alert(`Certificate Issued! Hash: ${data.hash}`);
+                } else {
+                    alert(data.msg || "Error issuing certificate");
+                }
+            } catch (error) {
+                console.error("Issue Error:", error);
+                alert("Error issuing certificate");
+            }
+        });
+
+        document.getElementById('logoutBtn').addEventListener('click', async () => {
+            await fetch('http://localhost:3000/api/auth/logout', { method: 'POST', credentials: 'include' });
+            window.location.href = "/login.html";
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    text-align: center;
+    background-color: #1c1c1c;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  }
+  
+  input[type="file"] {
+    margin: 20px 0;
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+  }
+  
+  button {
+    background-color: #00ffcc;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #00ddb3;
+  }
+  
+  #hashOutput {
+    margin-top: 20px;
+    word-break: break-all;
+    color: #00ffcc;
+    font-size: 14px;
+  }
+  

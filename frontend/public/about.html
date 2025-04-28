@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="aboutStyle.css">
+</head>
+<body>
+    <header>
+        <h1>About Our Team</h1>
+    </header>
+    <main>
+        <!-- Team Section -->
+    <section class="team">
+        <div class="member" onclick="openModal('Aswin M', 'Solidity Developer', 'Aswin is a blockchain solidity code writer loves to code.', 'Aswin.jpeg')">
+            <img src="/Aswin.jpeg" alt="Member 1">
+            <h2 class="name">Aswin M</h2>
+            <h3 class="role">Solidity Developer</h3>
+            <p class="details">Aswin is a blockchain solidity code writer loves to code.</p>
+        </div>
+        <div class="member" onclick="openModal('Santhosh S', 'Project Researcher', 'Santhosh is a project researcher loves to reach in all the fields.', 'Santhosh.jpeg')">
+            <img src="/Santhosh.jpeg" alt="Member 2">
+            <h2 class="name">Santhosh S</h2>
+            <h3 class="role">Project Researcher</h3>
+            <p class="details">Santhosh is a project researcher loves to reach in all the fields.</p>
+        </div>
+        <div class="member" onclick="openModal('Sudhakar B', 'Front-End Developer', 'Sudhakar is a front-end developer, loves to create user-friendly websites.', 'Sudhakar.jpeg')">
+            <img src="/Sudhakar.jpeg" alt="Member 3">
+            <h2 class="name">Sudhakar B</h2>
+            <h3 class="role">Front-End Developer</h3>
+            <p class="details">Sudhakar is a front-end developer, loves to create user-friendly websites.</p>
+        </div>
+        <div class="member" onclick="openModal('Syed Ishaaq SR', 'Back-End Developer', 'Syed is a back-end developer who connects both front-end and back-end.', 'SyedIshaaq.jpeg')">
+            <img src="/SyedIshaaq.jpeg" alt="Member 4">
+            <h2 class="name">Syed Ishaaq SR</h2>
+            <h3 class="role">Back-End Developer</h3>
+            <p class="details">Syed is a back-end developer who connects both front-end and back-end.</p>
+        </div>
+    </section>
+    <!-- Modal Structure -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Member Image">
+            <h2 id="modalName"></h2>
+            <h3 id="modalRole"></h3>
+            <p id="modalDetails"></p>
+        </div>
+    </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Our Team. All rights reserved.</p>
+    </footer>
+    <script src="aboutJs.js"></script>
+</body>
+</html>

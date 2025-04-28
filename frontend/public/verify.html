@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificate Hash Generator</title>
+  <link rel="stylesheet" href="verifystyle.css" />
+  <link rel="script" href="verifyjs.js" />
+
+</head>
+<body>
+  <div class="container">
+    <h1>Upload Certificate</h1>
+    <input type="file" id="fileInput" />
+    <button onclick="generateHash()">Generate Hash Value</button>
+    <p id="hashOutput"></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-sha256@0.9.0/build/sha256.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

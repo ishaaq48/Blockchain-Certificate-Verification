@@ -2,6 +2,7 @@
 import express from "express"
 import dotenv from "dotenv"
 import cookieParser from "cookie-parser"
+import cors from 'cors'
 
 // file imports
 import connectDB from "./config/db.js"
@@ -13,7 +14,15 @@ dotenv.config()
 
 const app = express()
 
+
 // middleware
+
+app.use(cors({
+  origin: "http://localhost:3000",
+  credentials: true
+}));
+
+
 app.use(express.json());
 app.use(cookieParser());
 
